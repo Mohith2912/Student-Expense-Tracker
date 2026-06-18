@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spendora Student - Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/analytics.css" />
+  <script src="js/common.js" defer></script>
+  <script src="js/analytics.js" defer></script>
+</head>
+<body>
+  <div class="dashboard-layout">
+    <aside class="sidebar">
+      <a href="index.html" class="brand side-brand">
+        <span class="brand-logo">S</span>
+        <span>Spendora Student</span>
+      </a>
+      <nav class="side-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="transactions.html">Transactions</a>
+        <a href="budgets.html">Budgets</a>
+        <a href="goals.html">Goals</a>
+        <a href="analytics.html" class="active">Analytics</a>
+      </nav>
+    </aside>
+
+    <main class="page-main">
+      <header class="page-topbar">
+        <div>
+          <p class="eyebrow">Reports</p>
+          <h1>Analytics</h1>
+        </div>
+        <button id="themeToggle" class="theme-btn">🌙 Theme</button>
+      </header>
+
+      <section class="analytics-grid">
+        <article class="panel metric-box">
+          <h3>Total Transactions</h3>
+          <p id="analyticsTransactionCount">0</p>
+        </article>
+        <article class="panel metric-box">
+          <h3>Total Income</h3>
+          <p id="analyticsIncome">₹0</p>
+        </article>
+        <article class="panel metric-box">
+          <h3>Total Expense</h3>
+          <p id="analyticsExpense">₹0</p>
+        </article>
+        <article class="panel metric-box">
+          <h3>Balance</h3>
+          <p id="analyticsBalance">₹0</p>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h3>Insight Summary</h3>
+        <div id="insightSummary" class="insight-summary"></div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

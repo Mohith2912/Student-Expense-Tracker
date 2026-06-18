@@ -3,337 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spendora Student Expense Tracker</title>
+  <title>Spendora Student - Home</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" defer></script>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <script src="js/common.js" defer></script>
+  <script src="js/index.js" defer></script>
 </head>
 <body>
-  <div class="app-shell">
-    <aside class="sidebar">
-      <div class="brand">
-        <div class="logo" aria-label="Spendora logo">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M5 14.5C5 10.91 7.91 8 11.5 8H19v3.5C19 15.09 16.09 18 12.5 18H5v-3.5Z" stroke="currentColor" stroke-width="1.8"></path>
-            <path d="M8 8V6.8C8 5.25 9.25 4 10.8 4H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-            <circle cx="12" cy="13" r="1.2" fill="currentColor"></circle>
-          </svg>
-        </div>
-        <div>
-          <h1>Spendora Student</h1>
-          <p>Smarter campus money flow</p>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a href="index.html" class="brand">
+        <span class="brand-logo">S</span>
+        <span>Spendora Student</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="transactions.html">Transactions</a>
+        <a href="budgets.html">Budgets</a>
+        <a href="goals.html">Goals</a>
+        <a href="analytics.html">Analytics</a>
+      </nav>
+      <button id="themeToggle" class="theme-btn">🌙 Theme</button>
+    </div>
+  </header>
+
+  <main class="hero-page">
+    <section class="hero-section container">
+      <div class="hero-copy">
+        <p class="eyebrow">Student Expense Tracker</p>
+        <h1>Track money without confusion.</h1>
+        <p class="hero-text">
+          Manage allowance, hostel costs, food spending, transport, books, and savings with separate pages built for student budgeting.
+        </p>
+        <div class="hero-actions">
+          <a href="dashboard.html" class="btn btn-primary">Open Dashboard</a>
+          <a href="transactions.html" class="btn btn-secondary">Add Transactions</a>
         </div>
       </div>
 
-      <nav class="nav-list" aria-label="Primary navigation">
-        <button class="nav-btn active" data-section-target="dashboard"><span>Dashboard</span><span>01</span></button>
-        <button class="nav-btn" data-section-target="transactions"><span>Transactions</span><span>02</span></button>
-        <button class="nav-btn" data-section-target="budgets"><span>Budgets</span><span>03</span></button>
-        <button class="nav-btn" data-section-target="goals"><span>Goals</span><span>04</span></button>
-        <button class="nav-btn" data-section-target="analytics"><span>Analytics</span><span>05</span></button>
-      </nav>
-
-      <div class="sidebar-card">
-        <h3>Monthly focus</h3>
-        <p>You are on track to save more than last month if food spending stays below ₹6,500.</p>
-        <button class="cta-btn" id="quickAddSidebar">Add new expense</button>
+      <div class="hero-card">
+        <h3>What this website includes</h3>
+        <ul>
+          <li>Dashboard summary page</li>
+          <li>Separate transaction page</li>
+          <li>Budget planner page</li>
+          <li>Goal tracking page</li>
+          <li>Analytics and insights page</li>
+        </ul>
       </div>
-    </aside>
-
-    <main class="main">
-      <header class="topbar">
-        <div>
-          <h2 id="pageTitle">Dashboard overview</h2>
-          <p>Track allowance, hostel costs, food, transport, and savings in one focused workspace.</p>
-        </div>
-        <div class="topbar-actions">
-          <button class="chip" id="monthChip">June 2026</button>
-          <button class="theme-btn" id="themeToggle" aria-label="Switch theme">🌙 Theme</button>
-          <button class="ghost-btn" id="seedDataBtn">Reset demo</button>
-          <button class="cta-btn" id="quickAddTop">+ Add transaction</button>
-        </div>
-      </header>
-
-      <section class="section active" id="dashboard">
-        <div class="hero">
-          <article class="hero-card hero-balance">
-            <div>
-              <p class="eyebrow">Available this month</p>
-              <div class="balance-value" id="balanceValue">₹0</div>
-              <p class="subtle">Live balance after combining income, expenses, and current saving target contributions.</p>
-            </div>
-            <div class="mini-grid">
-              <div class="mini-card"><small>Total income</small><strong id="incomeValue">₹0</strong></div>
-              <div class="mini-card"><small>Total spent</small><strong id="spentValue">₹0</strong></div>
-              <div class="mini-card"><small>Saved so far</small><strong id="savedValue">₹0</strong></div>
-            </div>
-            <div class="kpi-note"><span>●</span><span id="budgetHealth">Budget health loads here.</span></div>
-          </article>
-
-          <article class="hero-card hero-side">
-            <div>
-              <p class="eyebrow">Savings goal progress</p>
-              <div class="progress-ring"></div>
-              <div class="progress-label">
-                <strong id="goalPercent">0%</strong>
-                <p class="subtle" id="goalLabel">Goal progress</p>
-              </div>
-            </div>
-            <div class="muted-box">
-              <p class="eyebrow">Smart nudge</p>
-              <p id="smartInsight">Your personalized suggestion will appear here based on current transactions.</p>
-            </div>
-          </article>
-        </div>
-
-        <div class="stats-board">
-          <div class="stat"><small>Needs ratio</small><strong id="needsRatio">0%</strong><span class="delta up">Essential control</span></div>
-          <div class="stat"><small>Wants ratio</small><strong id="wantsRatio">0%</strong><span class="delta warn">Lifestyle spend</span></div>
-          <div class="stat"><small>Savings rate</small><strong id="savingsRate">0%</strong><span class="delta up">Future-ready</span></div>
-          <div class="stat"><small>Biggest category</small><strong id="topCategory">-</strong><span class="delta danger">Watch closely</span></div>
-        </div>
-
-        <div class="content-grid">
-          <article class="card">
-            <div class="card-head">
-              <div>
-                <h3>Spending trend</h3>
-                <p>Six-month view of income vs expense flow for fast pattern spotting.</p>
-              </div>
-              <div class="filters">
-                <button class="filter-btn active" data-trend="6">6M</button>
-                <button class="filter-btn" data-trend="3">3M</button>
-              </div>
-            </div>
-            <div class="chart-wrap"><canvas id="trendChart"></canvas></div>
-          </article>
-
-          <article class="card">
-            <div class="card-head">
-              <div>
-                <h3>Category split</h3>
-                <p>Current month expenses grouped into student-friendly buckets.</p>
-              </div>
-              <span class="pill">Live share</span>
-            </div>
-            <div class="chart-wrap"><canvas id="categoryChart"></canvas></div>
-          </article>
-        </div>
-
-        <div class="content-grid">
-          <article class="card">
-            <div class="card-head">
-              <div>
-                <h3>Recent transactions</h3>
-                <p>Latest money movement across food, travel, hostel, books, and income entries.</p>
-              </div>
-              <button class="ghost-btn" data-section-target="transactions">Open ledger</button>
-            </div>
-            <div class="transaction-list" id="recentTransactions"></div>
-          </article>
-
-          <article class="card">
-            <div class="card-head">
-              <div>
-                <h3>Budget pressure</h3>
-                <p>See which category is close to crossing its monthly cap.</p>
-              </div>
-              <button class="ghost-btn" data-section-target="budgets">Adjust budgets</button>
-            </div>
-            <div class="budget-list" id="budgetPressure"></div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="transactions">
-        <div class="two-col">
-          <article class="card">
-            <div class="card-head">
-              <div>
-                <h3>Add transaction</h3>
-                <p>Quick add flow with automatic recalculation for every dashboard widget.</p>
-              </div>
-              <span class="pill">Client-side logic</span>
-            </div>
-
-            <form id="transactionForm">
-              <div class="form-grid">
-                <div class="field">
-                  <label for="type">Type</label>
-                  <select id="type" required>
-                    <option value="expense">Expense</option>
-                    <option value="income">Income</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="amount">Amount</label>
-                  <input id="amount" type="number" min="1" step="0.01" placeholder="Enter amount" required />
-                </div>
-                <div class="field">
-                  <label for="category">Category</label>
-                  <select id="category" required></select>
-                </div>
-                <div class="field">
-                  <label for="date">Date</label>
-                  <input id="date" type="date" required />
-                </div>
-                <div class="field">
-                  <label for="payment">Payment method</label>
-                  <select id="payment">
-                    <option>UPI</option>
-                    <option>Cash</option>
-                    <option>Card</option>
-                    <option>Bank</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="note">Note</label>
-                  <input id="note" type="text" placeholder="Ex: Lunch with friends" />
-                </div>
-              </div>
-              <div class="form-actions">
-                <button class="cta-btn" type="submit">Save transaction</button>
-                <button class="ghost-btn" type="button" id="fillSampleExpense">Fill sample</button>
-              </div>
-            </form>
-          </article>
-
-          <article class="card">
-            <div class="card-head">
-              <div>
-                <h3>Quick breakdown</h3>
-                <p>Live category totals update instantly as you add or delete entries.</p>
-              </div>
-            </div>
-            <div class="insight-list" id="transactionInsights"></div>
-          </article>
-        </div>
-
-        <article class="card">
-          <div class="card-head">
-            <div>
-              <h3>Transaction ledger</h3>
-              <p>Filterable table of all records for the current demo session.</p>
-            </div>
-            <div class="filters">
-              <button class="filter-btn active" data-ledger-filter="all">All</button>
-              <button class="filter-btn" data-ledger-filter="expense">Expenses</button>
-              <button class="filter-btn" data-ledger-filter="income">Income</button>
-            </div>
-          </div>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Type</th>
-                  <th>Category</th>
-                  <th>Note</th>
-                  <th>Date</th>
-                  <th>Method</th>
-                  <th>Amount</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody id="ledgerTable"></tbody>
-            </table>
-          </div>
-        </article>
-      </section>
-
-      <section class="section" id="budgets">
-        <div class="two-col">
-          <article class="card">
-            <div class="card-head">
-              <div>
-                <h3>Monthly category budgets</h3>
-                <p>Essential categories are tuned for student life and can be edited instantly.</p>
-              </div>
-            </div>
-            <div class="budget-list" id="budgetEditor"></div>
-          </article>
-
-          <article class="card">
-            <div class="card-head">
-              <div>
-                <h3>Budget recommendations</h3>
-                <p>Rule-based guidance using current income and your 50/30/20-style spending behavior.</p>
-              </div>
-            </div>
-            <div class="insight-list" id="budgetInsights"></div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="goals">
-        <div class="two-col">
-          <article class="card">
-            <div class="card-head">
-              <div>
-                <h3>Savings goals</h3>
-                <p>Create short-term goals like semester books, headphones, travel, or emergency fund.</p>
-              </div>
-            </div>
-            <form id="goalForm">
-              <div class="form-grid">
-                <div class="field"><label for="goalTitle">Goal title</label><input id="goalTitle" placeholder="New laptop fund" required /></div>
-                <div class="field"><label for="goalTarget">Target amount</label><input id="goalTarget" type="number" min="1" required /></div>
-                <div class="field"><label for="goalSaved">Already saved</label><input id="goalSaved" type="number" min="0" required /></div>
-                <div class="field"><label for="goalDeadline">Deadline</label><input id="goalDeadline" type="date" required /></div>
-              </div>
-              <div class="form-actions">
-                <button class="cta-btn" type="submit">Add goal</button>
-                <button class="ghost-btn" type="button" id="fillSampleGoal">Fill sample</button>
-              </div>
-            </form>
-          </article>
-
-          <article class="card">
-            <div class="card-head">
-              <div>
-                <h3>Goal progress board</h3>
-                <p>Every goal shows percentage completion and time urgency.</p>
-              </div>
-            </div>
-            <div class="goals-list" id="goalList"></div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="analytics">
-        <div class="two-col">
-          <article class="card">
-            <div class="card-head">
-              <div>
-                <h3>Behavior insights</h3>
-                <p>Readable suggestions generated from actual spending distribution and goal health.</p>
-              </div>
-            </div>
-            <div class="insight-list" id="behaviorInsights"></div>
-          </article>
-
-          <article class="card">
-            <div class="card-head">
-              <div>
-                <h3>Monthly scorecard</h3>
-                <p>A compact summary for presentation, review, or self-audit.</p>
-              </div>
-            </div>
-            <div class="insight-list" id="scorecard"></div>
-          </article>
-        </div>
-      </section>
-
-      <nav class="mobile-nav" aria-label="Mobile navigation">
-        <button class="active" data-section-target="dashboard">Home</button>
-        <button data-section-target="transactions">Ledger</button>
-        <button id="mobileAddBtn">Add</button>
-        <button data-section-target="budgets">Budget</button>
-        <button data-section-target="analytics">Stats</button>
-      </nav>
-    </main>
-  </div>
+    </section>
+  </main>
 </body>
 </html>

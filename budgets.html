@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spendora Student - Budgets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/budgets.css" />
+  <script src="js/common.js" defer></script>
+  <script src="js/budgets.js" defer></script>
+</head>
+<body>
+  <div class="dashboard-layout">
+    <aside class="sidebar">
+      <a href="index.html" class="brand side-brand">
+        <span class="brand-logo">S</span>
+        <span>Spendora Student</span>
+      </a>
+      <nav class="side-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="transactions.html">Transactions</a>
+        <a href="budgets.html" class="active">Budgets</a>
+        <a href="goals.html">Goals</a>
+        <a href="analytics.html">Analytics</a>
+      </nav>
+    </aside>
+
+    <main class="page-main">
+      <header class="page-topbar">
+        <div>
+          <p class="eyebrow">Budget Control</p>
+          <h1>Budgets</h1>
+        </div>
+        <button id="themeToggle" class="theme-btn">🌙 Theme</button>
+      </header>
+
+      <section class="panel">
+        <h3>Set Monthly Budgets</h3>
+        <form id="budgetForm" class="budget-grid">
+          <div class="field"><label for="foodBudget">Food</label><input type="number" id="foodBudget" min="0" /></div>
+          <div class="field"><label for="transportBudget">Transport</label><input type="number" id="transportBudget" min="0" /></div>
+          <div class="field"><label for="booksBudget">Books</label><input type="number" id="booksBudget" min="0" /></div>
+          <div class="field"><label for="hostelBudget">Hostel</label><input type="number" id="hostelBudget" min="0" /></div>
+          <div class="field"><label for="entertainmentBudget">Entertainment</label><input type="number" id="entertainmentBudget" min="0" /></div>
+          <div class="field"><label for="shoppingBudget">Shopping</label><input type="number" id="shoppingBudget" min="0" /></div>
+          <div class="field full-span"><button type="submit" class="btn btn-primary">Save Budgets</button></div>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h3>Current Budget Overview</h3>
+        <div id="budgetCards" class="budget-cards"></div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

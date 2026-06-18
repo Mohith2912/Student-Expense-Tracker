@@ -1,0 +1,12 @@
+#transactionTableBody td {
+  vertical-align: middle;
+}
+
+.delete-btn {
+  background: var(--danger);
+  color: white;
+  border: 0;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  cursor: pointer;
+}

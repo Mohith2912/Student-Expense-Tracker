@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spendora Student - Goals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/goals.css" />
+  <script src="js/common.js" defer></script>
+  <script src="js/goals.js" defer></script>
+</head>
+<body>
+  <div class="dashboard-layout">
+    <aside class="sidebar">
+      <a href="index.html" class="brand side-brand">
+        <span class="brand-logo">S</span>
+        <span>Spendora Student</span>
+      </a>
+      <nav class="side-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="transactions.html">Transactions</a>
+        <a href="budgets.html">Budgets</a>
+        <a href="goals.html" class="active">Goals</a>
+        <a href="analytics.html">Analytics</a>
+      </nav>
+    </aside>
+
+    <main class="page-main">
+      <header class="page-topbar">
+        <div>
+          <p class="eyebrow">Savings Plan</p>
+          <h1>Goals</h1>
+        </div>
+        <button id="themeToggle" class="theme-btn">🌙 Theme</button>
+      </header>
+
+      <section class="two-col-layout">
+        <article class="panel">
+          <h3>Create Goal</h3>
+          <form id="goalForm" class="form-grid">
+            <div class="field">
+              <label for="goalTitle">Goal Title</label>
+              <input type="text" id="goalTitle" required />
+            </div>
+            <div class="field">
+              <label for="goalTarget">Target Amount</label>
+              <input type="number" id="goalTarget" min="1" required />
+            </div>
+            <div class="field">
+              <label for="goalSaved">Saved Amount</label>
+              <input type="number" id="goalSaved" min="0" required />
+            </div>
+            <div class="field">
+              <label for="goalDeadline">Deadline</label>
+              <input type="date" id="goalDeadline" required />
+            </div>
+            <div class="field full-span">
+              <button type="submit" class="btn btn-primary">Add Goal</button>
+            </div>
+          </form>
+        </article>
+
+        <article class="panel">
+          <h3>Goal Guide</h3>
+          <ul class="info-list">
+            <li>Create multiple savings targets</li>
+            <li>Track progress percentage</li>
+            <li>Remove completed or unwanted goals</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h3>Goals List</h3>
+        <div id="goalList" class="goal-list"></div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

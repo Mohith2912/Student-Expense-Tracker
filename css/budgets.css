@@ -1,0 +1,26 @@
+.budget-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.budget-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+}
+
+.budget-card h4 {
+  margin-bottom: 0.5rem;
+}
+
+.budget-card p {
+  color: var(--muted);
+}
+
+@media (max-width: 960px) {
+  .budget-cards {
+    grid-template-columns: 1fr;
+  }
+}

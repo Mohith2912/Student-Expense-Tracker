@@ -1,0 +1,30 @@
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.metric-box p {
+  margin-top: 0.5rem;
+  font-size: 2rem;
+  font-family: var(--font-display);
+}
+
+.insight-summary {
+  display: grid;
+  gap: 1rem;
+}
+
+.insight-box {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  color: var(--muted);
+}
+
+@media (max-width: 960px) {
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+}
