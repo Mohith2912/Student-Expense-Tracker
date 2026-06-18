@@ -1,22 +1,13 @@
-<div align="center">
+🎓 Spendora Student Expense Tracker
 
-# 🎓 Spendora Student Expense Tracker
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F766E,50:1F9D8F,100:74C69D&height=220&section=header&text=Spendora%20Student&fontSize=44&fontAlignY=40&fontColor=ffffff&desc=Animated%20Student%20Finance%20Dashboard&descAlignY=62&animation=fadeIn" alt="Banner" />
-
-<img src="https://readme-typing-svg.demolab.com?font=Manrope&weight=800&size=22&duration=2500&pause=900&color=0F766E&center=true&vCenter=true&multiline=true&repeat=true&width=950&lines=Track+Income+%E2%80%A2+Expenses+%E2%80%A2+Budgets+%E2%80%A2+Goals;Multi-Page+HTML+CSS+JavaScript+Project" alt="Typing SVG" />
-
-</div>
-
-## ✨ What is this project?
+✨ What is this project?
 
 Spendora Student Expense Tracker is a modern student finance website that helps users manage money in a clean and simple way. It separates the app into pages like dashboard, transactions, budgets, goals, and analytics so each task stays easy to use.
-
-## 💡 Why it is useful
+💡 Why it is useful
 
 Students usually manage allowance, part-time income, hostel fees, food spending, transport, books, and personal expenses. This project makes that easier by turning money tracking into a visual and structured workflow.
 
-## 🚀 Main Features
+🚀 Main Features
 
 - **Dashboard** — See income, expenses, balance, and charts.
 - **Transactions** — Add and manage income or expense records.
@@ -26,7 +17,7 @@ Students usually manage allowance, part-time income, hostel fees, food spending,
 - **Theme toggle** — Switch between light and dark mode.
 - **Responsive UI** — Works on mobile and desktop.
 
-## 🗂️ Pages in the Website
+🗂️ Pages in the Website
 
 | Page | Purpose |
 |------|---------|
